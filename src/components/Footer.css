@@ -1,0 +1,328 @@
+.footer {
+  background-color: #1a1a1a;
+  padding: 1rem 0 2rem 3rem;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+}
+
+.payment-logos {
+  display: flex;
+  justify-content: start;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.crypto-logos {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.payment-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.payment-logo:hover {
+  filter: brightness(1) invert(0);
+}
+
+.payment-logo.crypto {
+  height: 25px;
+  filter: brightness(1) invert(0);
+}
+
+.payment-logo.crypto:hover {
+  filter: brightness(1) invert(0);
+}
+
+.more-payments {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.social-media {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-image {
+  height: 30px;
+  width: auto;
+  max-width: 150px;
+}
+
+.footer-email {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links li a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+  color: #4ade80;
+}
+
+.trustpilot-section {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trustpilot-bar {
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.stars {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 0.1rem;
+}
+
+.stars svg {
+  background-color: #3ebe6d;
+}
+
+.trustpilot-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.copyright {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .trustpilot-section {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .payment-methods {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .payment-logos {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .crypto-logos {
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .footer-content {
+    gap: 1.5rem;
+  }
+  
+  .trustpilot-section {
+    justify-content: center;
+  }
+  
+  .social-media {
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-logos {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .crypto-logos {
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+  
+  .payment-logo {
+    height: 25px;
+  }
+  
+  .payment-logo.crypto {
+    height: 20px;
+  }
+  
+  .more-payments {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 425px) {
+  .footer {
+    padding: 1rem 0 1.5rem 1rem;
+  }
+  
+  .footer-container {
+    padding: 0 0.5rem;
+  }
+  
+  .payment-methods {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .payment-logos {
+    gap: 0.75rem;
+  }
+  
+  .crypto-logos {
+    gap: 0.75rem;
+  }
+  
+  .social-media {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  
+  .footer-content {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .footer-title {
+    font-size: 0.9rem;
+  }
+  
+  .footer-links li a {
+    font-size: 0.8rem;
+  }
+  
+  
+  .stars {
+    font-size: 1rem;
+  }
+  
+  .trustpilot-text {
+    font-size: 0.7rem;
+  }
+  
+  .copyright {
+    font-size: 0.7rem;
+  }
+}

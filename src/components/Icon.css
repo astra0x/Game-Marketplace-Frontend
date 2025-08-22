@@ -1,0 +1,134 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Size variants */
+.icon--small {
+  padding: 0.3rem 0.4rem;
+  font-size: 0.7rem;
+}
+
+.icon--medium {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.icon--large {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+/* Color variants */
+.icon--default {
+  background-color: #333;
+  color: white;
+}
+
+.icon--primary {
+  background-color: #2055c7;
+  color: white;
+}
+
+.icon--secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.icon--success {
+  background-color: #4ade80;
+  color: white;
+}
+
+.icon--warning {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.icon--danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Hover states */
+.icon--default:hover {
+  background-color: #444;
+}
+
+.icon--primary:hover {
+  background-color: #1d4ed8;
+}
+
+.icon--secondary:hover {
+  background-color: #4b5563;
+}
+
+.icon--success:hover {
+  background-color: #22c55e;
+}
+
+.icon--warning:hover {
+  background-color: #d97706;
+}
+
+.icon--danger:hover {
+  background-color: #dc2626;
+}
+
+/* Disabled state */
+.icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon:disabled:hover {
+  background-color: inherit;
+}
+
+/* Focus state for accessibility */
+.icon:focus {
+  outline: 2px solid #4ade80;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icon--small {
+    padding: 0.25rem 0.35rem;
+    font-size: 0.65rem;
+  }
+  
+  .icon--medium {
+    padding: 0.35rem 0.45rem;
+    font-size: 0.75rem;
+  }
+  
+  .icon--large {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon--small {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.6rem;
+  }
+  
+  .icon--medium {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  
+  .icon--large {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}

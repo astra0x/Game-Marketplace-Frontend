@@ -1,0 +1,944 @@
+.main-content {
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 2rem 0;
+  position: relative;
+}
+.background-image {
+  position: absolute;
+  opacity: 10%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+
+.main-container {
+  z-index: 10;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 3rem 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+.search-filters {
+  display: grid;
+  grid-template-columns: 3fr 6fr 1.5fr 1.5fr;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.game-selector,
+.search-bar,
+.price-filter,
+.item-type-filter {
+  width: 100%;
+  min-width: 0;
+}
+
+.game-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1a1a1a;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 48px;
+  min-height: 48px;
+}
+
+.game-selector:hover,
+.game-selector:focus-within {
+  border-color: #4ade80;
+  background-color: #222;
+}
+
+.sword-icon {
+  font-size: 1.1rem;
+  color: white;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.game-dropdown {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /* Remove native select dropdown arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+.game-dropdown option {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.5rem;
+}
+
+/* Additional select styling to ensure no browser defaults */
+.game-dropdown::-ms-expand {
+  display: none;
+}
+
+.game-dropdown:focus {
+  outline: none;
+}
+
+.game-dropdown:hover {
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.game-selector:hover .dropdown-arrow,
+.game-selector:focus-within .dropdown-arrow {
+  color: #4ade80;
+}
+
+/* Position dropdown arrow for game selector */
+.game-selector .dropdown-arrow {
+  position: static;
+  margin-left: auto;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1a1a1a;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  transition: all 0.2s ease;
+  height: 48px;
+  min-height: 48px;
+}
+
+.search-bar:focus-within {
+  border-color: #4ade80;
+  background-color: #222;
+}
+
+/* Remove any default borders from the input to prevent double borders */
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  box-shadow: none;
+  /* Remove any browser default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.search-icon {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.price-filter,
+.item-type-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1a1a1a;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  height: 48px;
+  min-height: 48px;
+}
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+  height: 100%;
+}
+
+.filter-label {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.filter-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Style the price and item type dropdowns to match game selector */
+.price-dropdown,
+.item-type-dropdown {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /* Remove native select dropdown arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+.price-dropdown option,
+.item-type-dropdown option {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.5rem;
+}
+
+/* Additional select styling to ensure no browser defaults */
+.price-dropdown::-ms-expand,
+.item-type-dropdown::-ms-expand {
+  display: none;
+}
+
+.price-dropdown:focus,
+.item-type-dropdown:focus {
+  outline: none;
+}
+
+.price-dropdown:hover,
+.item-type-dropdown:hover {
+  cursor: pointer;
+}
+
+/* Position dropdown arrows for price and item type filters */
+.price-filter .dropdown-arrow,
+.item-type-filter .dropdown-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0;
+}
+
+.price-filter:hover,
+.price-filter:focus-within,
+.item-type-filter:hover,
+.item-type-filter:focus-within {
+  border-color: #4ade80;
+  background-color: #222;
+}
+
+.price-icon {
+  font-size: 1.1rem;
+  color: #4ade80;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.item-icon {
+  font-size: 1.1rem;
+  color: #4ade80;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Responsive icon sizing for all filter icons */
+@media (max-width: 900px) {
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+.price-filter .dropdown-arrow,
+.item-type-filter .dropdown-arrow {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.price-filter:hover .dropdown-arrow,
+.price-filter:focus-within .dropdown-arrow,
+.item-type-filter:hover .dropdown-arrow,
+.item-type-filter:focus-within .dropdown-arrow {
+  color: #4ade80;
+}
+
+.products-section {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .products-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .sort-controls {
+    align-self: flex-end;
+  }
+}
+
+.results-info {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Sort Controls */
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0f0f0f;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 48px;
+  min-height: 48px;
+  position: relative;
+}
+
+.sort-controls:hover,
+.sort-controls:focus-within {
+  border-color: #4ade80;
+  background-color: #1a1a1a;
+}
+
+.sort-icon {
+  font-size: 1rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+
+.sort-dropdown {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  flex: 1;
+}
+
+.sort-dropdown option {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.5rem;
+}
+
+.sort-dropdown::-ms-expand {
+  display: none;
+}
+
+.sort-controls .dropdown-arrow {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0;
+}
+
+.sort-controls:hover .dropdown-arrow,
+.sort-controls:focus-within .dropdown-arrow {
+  color: #4ade80;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-btn {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.pagination-btn:hover {
+  background-color: #333;
+  border-color: #4ade80;
+}
+
+.pagination-btn.active {
+  background-color: #4ade80;
+  border-color: #4ade80;
+  color: white;
+}
+
+.pagination-dots {
+  color: #9ca3af;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 1400px) {
+  .main-container {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 0 1.5rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .main-container {
+    padding: 0 1.25rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 0 1rem;
+  }
+  
+  .search-filters {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .game-selector {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  .search-bar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .price-filter {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .item-type-filter {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2.25rem;
+    margin: 2.5rem 0 1rem 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .search-filters {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .game-selector {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  .search-bar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .price-filter {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  
+  .item-type-filter {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  
+  .price-filter,
+  .item-type-filter {
+    justify-content: space-between;
+  }
+  
+  .filter-content {
+    gap: 0.2rem;
+  }
+  
+  .filter-label {
+    font-size: 0.7rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .game-selector,
+  .search-bar,
+  .price-filter,
+  .item-type-filter,
+  .sort-controls {
+    height: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+  }
+  
+  .search-filters {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .price-filter,
+  .item-type-filter {
+    justify-content: space-between;
+  }
+  
+  .filter-content {
+    gap: 0.15rem;
+  }
+  
+  .filter-label {
+    font-size: 0.65rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  .pagination-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .game-selector,
+  .search-bar,
+  .price-filter,
+  .item-type-filter,
+  .sort-controls {
+    height: 42px;
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 0 0.75rem;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .search-filters {
+    gap: 0.875rem;
+  }
+  
+  .price-filter,
+  .item-type-filter {
+    padding: 0.875rem;
+  }
+  
+  .filter-content {
+    gap: 0.1rem;
+  }
+  
+  .filter-label {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0 0.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.75rem 0;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .price-filter,
+  .item-type-filter {
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .filter-content {
+    gap: 0.1rem;
+    text-align: center;
+  }
+  
+  .filter-label {
+    font-size: 0.55rem;
+  }
+  
+  .search-filters {
+    gap: 0.75rem;
+  }
+  
+  .price-filter .filter-content,
+  .item-type-filter .filter-content,
+  .sort-controls .filter-content {
+    gap: 0.05rem;
+  }
+  
+  .price-filter .filter-value,
+  .item-type-filter .filter-value,
+  .sort-controls .filter-value {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .main-container {
+    padding: 0 0.25rem;
+  }
+  
+  .page-title {
+    font-size: 1.4rem;
+    margin: 0.75rem 0 0.5rem 0;
+  }
+  
+  .search-filters {
+    gap: 0.5rem;
+  }
+  
+  .price-filter,
+  .item-type-filter {
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+  
+  .filter-content {
+    gap: 0.05rem;
+  }
+  
+  .filter-label {
+    font-size: 0.5rem;
+  }
+  
+  .price-filter .filter-content,
+  .item-type-filter .filter-content,
+  .sort-controls .filter-content {
+    gap: 0.02rem;
+  }
+  
+  .price-filter .filter-value,
+  .item-type-filter .filter-value,
+  .sort-controls .filter-value {
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 0.8rem;
+  }
+  
+  .price-dropdown,
+  .item-type-dropdown,
+  .sort-dropdown,
+  .game-dropdown,
+  .search-input {
+    font-size: 0.8rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .search-filters {
+    gap: 0.5rem;
+  }
+  
+  .price-filter,
+  .item-type-filter {
+    padding: 0.5rem;
+    min-height: 35px;
+  }
+  
+  .filter-content {
+    gap: 0.05rem;
+  }
+  
+  .filter-label {
+    font-size: 0.5rem;
+  }
+  
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 0.75rem;
+  }
+  
+  .price-filter .filter-content,
+  .item-type-filter .filter-content,
+  .sort-controls .filter-content {
+    gap: 0.02rem;
+  }
+  
+  .price-filter .filter-value,
+  .item-type-filter .filter-value,
+  .sort-controls .filter-value {
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  
+  .price-filter .dropdown-arrow,
+  .item-type-filter .dropdown-arrow,
+  .sort-controls .dropdown-arrow {
+    font-size: 0.6rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-filters {
+    gap: 0.25rem;
+  }
+  
+  .main-container {
+    padding: 0 0.25rem;
+  }
+  
+  .price-filter,
+  .item-type-filter,
+  .sort-controls {
+    padding: 0.5rem;
+    height: 34px;
+    min-height: 34px;
+  }
+  
+  .filter-label {
+    font-size: 0.45rem;
+  }
+  
+  .price-icon,
+  .item-icon,
+  .sort-icon,
+  .sword-icon {
+    font-size: 0.7rem;
+  }
+  
+  .price-dropdown,
+  .item-type-dropdown,
+  .sort-dropdown,
+  .game-dropdown {
+    font-size: 0.8rem;
+  }
+  
+  .filter-content {
+    gap: 0.01rem;
+  }
+  
+  .filter-value {
+    gap: 0.2rem;
+  }
+  
+  .products-grid {
+    gap: 0.75rem;
+  }
+  
+  .page-title {
+    font-size: 1.3rem;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+}
