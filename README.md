@@ -43,8 +43,8 @@ CHICKS GOLD is a mock gaming marketplace that showcases various gaming items, cu
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
-   cd frontend
+   git clone https://github.com/Astravexx/chicksgold-frontend-test.git
+   cd chicksgold-frontend-test
    ```
 
 2. **Install dependencies**
@@ -54,7 +54,7 @@ CHICKS GOLD is a mock gaming marketplace that showcases various gaming items, cu
 
 3. **Start the development server**
    ```bash
-   npm start
+   npm run start
    ```
 
 4. **Open your browser**
@@ -62,8 +62,8 @@ CHICKS GOLD is a mock gaming marketplace that showcases various gaming items, cu
 
 ### Available Scripts
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
+- `npm run start` - Runs the app in development mode
+- `npm run test` - Launches the test runner
 - `npm run build` - Builds the app for production
 - `npm run eject` - Ejects from Create React App (one-way operation)
 
