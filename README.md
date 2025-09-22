@@ -43,8 +43,8 @@ CHICKS GOLD is a mock gaming marketplace that showcases various gaming items, cu
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/astra0x/chicksgold-frontend-test.git
-   cd chicksgold-frontend-test
+   git clone https://github.com/astra0x/Game-Marketplace-Frontend.git
+   cd Game-Marketplace-Frontend
    ```
 
 2. **Install dependencies**
