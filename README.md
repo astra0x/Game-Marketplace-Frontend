@@ -43,7 +43,7 @@ CHICKS GOLD is a mock gaming marketplace that showcases various gaming items, cu
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Astravexx/chicksgold-frontend-test.git
+   git clone https://github.com/astra0x/chicksgold-frontend-test.git
    cd chicksgold-frontend-test
    ```
 
@@ -144,7 +144,5 @@ src/
 - **Real-time Updates**: Live inventory and pricing
 - **Advanced Filtering**: More sophisticated search algorithms
 - **Performance Optimization**: Lazy loading and code splitting
-
-**Deployed URL**: chicksgold-frontend-test.vercel.app
 
 **Note**: This is a mock application designed to showcase frontend development skills. No real transactions or data persistence is implemented.
